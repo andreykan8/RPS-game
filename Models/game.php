@@ -4,16 +4,15 @@ declare(strict_types=1);
 
 require_once 'player.php';
 
-class Game extends Player
+class Game
 {
 
     const OPTIONS = ['rock', 'paper', 'scissors'];
     private int $player;
     private int $computer;
 
-    public function __construct(int $choice, Player $player, Player $computer)
+    public function __construct(Player $player, Player $computer)
     {
-        parent::__construct($choice);
 
         $this->player = $player->getChoice();
         $this->computer = $computer->getChoice();
