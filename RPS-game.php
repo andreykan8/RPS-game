@@ -2,54 +2,19 @@
 
 declare(strict_types = 1);
 
-$options = ['rock', 'paper', 'scissors'];
-$playerInput = strtolower(readline('Pick "Rock", "Paper" or "Scissors": '));
-$computerChoice = rand(0, 2);
+require_once 'player.php';
+require_once 'game.php';
 
-if ($playerInput === 'rock') {
-    switch ($options[$computerChoice]) {
-        case 'rock':
-            echo 'Draw!' . PHP_EOL;
-            break;
-        case 'paper':
-            echo 'You lose!' . PHP_EOL;
-            break;
-        case 'scissors':
-            echo 'You win!' . PHP_EOL;
-            break;
-        default:
-            echo 'Invalid command!' . PHP_EOL;
-            break;
-    }
-} elseif ($playerInput === 'paper') {
-    switch ($options[$computerChoice]) {
-        case 'rock':
-            echo 'You win!' . PHP_EOL;
-            break;
-        case 'paper':
-            echo 'Draw!' . PHP_EOL;
-            break;
-        case 'scissors':
-            echo 'You lose!' . PHP_EOL;
-            break;
-        default:
-            echo 'Invalid command!' . PHP_EOL;
-            break;
-    }
-} elseif ($playerInput === 'scissors') {
-    switch ($options[$computerChoice]) {
-        case 'rock':
-            echo 'You lose!' . PHP_EOL;
-            break;
-        case 'paper':
-            echo 'You win!' . PHP_EOL;
-            break;
-        case 'scissors':
-            echo 'Draw!' . PHP_EOL;
-            break;
-        default:
-            echo 'Invalid command!' . PHP_EOL;
-            break;
-    }
+function play()
+{
+    $playerInput = (int)strtolower(readline('Pick "Rock"(1), "Paper"(2) or "Scissors"(3): '));
+    $player = new Player($playerInput - 1);
+    $computer = new Player(rand(0, 2));
+    $game = new Game($playerInput, $player, $computer);
+    return $game->game();
 }
+
+echo play();
+
+
 
