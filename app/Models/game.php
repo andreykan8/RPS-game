@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-require_once 'player.php';
+namespace App\Models;
 
 class Game
 {
