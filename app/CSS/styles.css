@@ -3,11 +3,7 @@ body {
     background: hsl(227, 10%, 10%);
     font: 300 1em 'Fira Sans', sans-serif;
     justify-content: center;
-    align-content: center;
-    align-items: center;
-    text-align: center;
-    min-height: 100vh;
-    display: flex;
+    margin-top: 10%;
 }
 
 .contents {
@@ -17,7 +13,26 @@ body {
 }
 
 .form {
-    margin-top: 200px;
+    margin: 30px;
+}
+
+.field {
+    margin-top:auto;
+    margin-bottom:auto;
+    text-align:center;
+}
+
+.display {
+    margin: auto 30px;
+    text-align:center;
+}
+
+.display-player {
+    display: inline-block;
+}
+
+.display-computer {
+    display: inline-block;
 }
 
 .button {

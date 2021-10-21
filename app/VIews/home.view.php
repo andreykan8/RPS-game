@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 use App\Processor\Processor;
-unset($_POST['choice']);
+
 ?>
 
 <!doctype html>
@@ -20,7 +20,7 @@ unset($_POST['choice']);
         <div class="contents">
             <h1 class="make-choice"><?= Processor::$result ?></h1>
             <div class="field">
-
+                <?= Processor::$display ?>
             </div>
             <form class="form" action="/choice" method="post">
                 <button class="button" id="rock" type="submit" name="choice" value="0">
@@ -31,6 +31,12 @@ unset($_POST['choice']);
                 </button>
                 <button class="button" id="scissors" type="submit" name="choice" value="2">
                     <img src="/app/Images/scissors.png" alt="scissors-image" width="100" height="97">
+                </button>
+                <button class="button" id="lizard" type="submit" name="choice" value="3">
+                    <img src="/app/Images/lizard.jpeg" alt="scissors-image" width="100" height="97">
+                </button>
+                <button class="button" id="spok" type="submit" name="choice" value="4">
+                    <img src="/app/Images/spok.png" alt="scissors-image" width="100" height="97">
                 </button>
             </form>
         </div>
